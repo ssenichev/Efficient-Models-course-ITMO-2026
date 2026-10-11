@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.mpl-cache/
+data/
+runs/
+*.bin
+*.pt
+*.pth
+reports/
+.local/
+*.log
+.env*
+*.pem
+*.key
+.DS_Store

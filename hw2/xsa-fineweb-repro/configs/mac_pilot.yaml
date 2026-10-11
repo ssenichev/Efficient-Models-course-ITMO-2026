@@ -1,0 +1,24 @@
+extends: main.yaml
+experiment: xsa_mac_45m_1m_ctx256
+data:
+  processed_dir: data/processed/fineweb_mac_1m
+  train_tokens_target: 1000000
+  val_tokens_target: 100000
+  shuffle_buffer_size: 1000
+model:
+  block_size: 256
+train:
+  device: mps
+  precision: fp32
+  micro_batch_size: 1
+  global_batch_tokens: 4096
+  train_tokens_budget: 1000000
+  warmup_steps: 20
+  eval_batch_size: 1
+  eval_max_windows: 32
+  eval_every_steps: 50
+  diagnostic_max_windows: 8
+  checkpoint_every_steps: 100
+  log_every_steps: 10
+  deterministic: false
+  compile: false

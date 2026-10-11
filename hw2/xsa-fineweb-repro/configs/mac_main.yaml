@@ -1,0 +1,9 @@
+# Main scientific protocol; only device/precision and microbatch adapted to M5.
+extends: main.yaml
+experiment: xsa_mac_45m_100m_ctx1024
+train:
+  device: mps
+  precision: fp32
+  micro_batch_size: 1
+  eval_batch_size: 1
+  compile: false

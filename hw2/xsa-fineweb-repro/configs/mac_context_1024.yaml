@@ -1,0 +1,4 @@
+extends: mac_main.yaml
+experiment: xsa_mac_context1024_30m
+train:
+  train_tokens_budget: 30000000

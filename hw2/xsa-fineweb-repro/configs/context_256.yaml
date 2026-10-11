@@ -1,0 +1,6 @@
+extends: main.yaml
+experiment: xsa_context256_30m
+model:
+  block_size: 256
+train:
+  train_tokens_budget: 30000000

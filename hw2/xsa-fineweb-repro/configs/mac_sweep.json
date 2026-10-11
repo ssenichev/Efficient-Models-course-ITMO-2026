@@ -1,0 +1,52 @@
+{
+  "minimum_free_gib": 20,
+  "command_timeout_hours": 12,
+  "groups": [
+    {
+      "config": "configs/mac_main.yaml",
+      "seeds": [
+        42
+      ]
+    },
+    {
+      "config": "configs/mac_10m.yaml",
+      "seeds": [
+        42
+      ]
+    },
+    {
+      "config": "configs/mac_context_256.yaml",
+      "seeds": [
+        42
+      ]
+    },
+    {
+      "config": "configs/mac_context_512.yaml",
+      "seeds": [
+        42
+      ]
+    },
+    {
+      "config": "configs/mac_context_1024.yaml",
+      "seeds": [
+        42
+      ]
+    },
+    {
+      "config": "configs/mac_10m.yaml",
+      "seeds": [
+        43,
+        44
+      ]
+    },
+    {
+      "config": "configs/mac_main.yaml",
+      "seeds": [
+        43,
+        44
+      ]
+    }
+  ],
+  "workspace": "runs/sweep",
+  "artifacts_dir": "reports"
+}

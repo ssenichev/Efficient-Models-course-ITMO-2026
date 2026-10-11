@@ -1,0 +1,32 @@
+extends: main.yaml
+experiment: synthetic_smoke
+data:
+  source: synthetic
+  tokenizer: synthetic-byte-v1
+  revision: null
+  eos_id: 255
+  processed_dir: data/processed/synthetic_smoke
+  val_fraction_documents: 0.2
+  train_tokens_target: 4096
+  val_tokens_target: 1024
+  shuffle_buffer_size: 32
+model:
+  vocab_size: 256
+  n_layer: 2
+  n_embd: 32
+  n_head: 4
+  block_size: 16
+train:
+  device: cpu
+  precision: fp32
+  global_batch_tokens: 64
+  micro_batch_size: 2
+  train_tokens_budget: 256
+  warmup_steps: 1
+  eval_every_steps: 2
+  eval_max_windows: 8
+  checkpoint_every_steps: 2
+  log_every_steps: 1
+  diagnostic_max_windows: 8
+  deterministic: true
+  cpu_threads: 1

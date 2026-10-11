@@ -1,0 +1,6 @@
+extends: mac_main.yaml
+experiment: xsa_mac_context512_30m
+model:
+  block_size: 512
+train:
+  train_tokens_budget: 30000000

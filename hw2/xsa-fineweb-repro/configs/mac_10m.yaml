@@ -1,0 +1,11 @@
+extends: mac_pilot.yaml
+experiment: xsa_mac_45m_10m_ctx256
+data:
+  processed_dir: data/processed/fineweb_mac_10m
+  train_tokens_target: 10000000
+  val_tokens_target: 200000
+train:
+  train_tokens_budget: 10000000
+  warmup_steps: 100
+  eval_every_steps: 100
+  checkpoint_every_steps: 250

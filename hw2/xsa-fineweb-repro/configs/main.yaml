@@ -1,0 +1,53 @@
+experiment: xsa_fineweb_45m
+seed: 42
+runs_dir: runs
+data:
+  source: fineweb
+  dataset_id: HuggingFaceFW/fineweb
+  subset: sample-10BT
+  revision: 9bb295ddab0e05d785b879661af7260fed5140fc
+  tokenizer: gpt2
+  shuffle_seed: 123
+  shuffle_buffer_size: 10000
+  split_salt: xsa-fineweb-v1
+  val_fraction_documents: 0.02
+  train_tokens_target: 100000000
+  val_tokens_target: 2000000
+  eos_id: 50256
+  processed_dir: data/processed/fineweb_100m
+model:
+  vocab_size: 50257
+  n_layer: 6
+  n_embd: 512
+  n_head: 8
+  mlp_ratio: 4
+  block_size: 1024
+  rope_theta: 10000.0
+  embed_layer_norm: true
+  tie_embeddings: true
+  bias: true
+  dropout: 0.0
+  xsa_projection_fp32: false
+train:
+  optimizer: adamw
+  learning_rate: 0.0006
+  min_lr_ratio: 0.1
+  betas: [0.9, 0.95]
+  weight_decay: 0.1
+  grad_clip_norm: 1.0
+  global_batch_tokens: 65536
+  micro_batch_size: 2
+  train_tokens_budget: 100000000
+  warmup_steps: 100
+  lr_schedule: warmup_cosine
+  precision: auto
+  device: auto
+  eval_every_steps: 100
+  eval_max_windows: 128
+  eval_batch_size: 2
+  checkpoint_every_steps: 250
+  log_every_steps: 10
+  diagnostic_max_windows: 32
+  deterministic: false
+  compile: false
+  cpu_threads: 4

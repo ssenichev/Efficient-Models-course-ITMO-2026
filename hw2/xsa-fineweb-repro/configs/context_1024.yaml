@@ -1,0 +1,4 @@
+extends: main.yaml
+experiment: xsa_context1024_30m
+train:
+  train_tokens_budget: 30000000
